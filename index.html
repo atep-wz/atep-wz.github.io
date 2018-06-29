@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Title</title>
+    <title>Extend Markdown with citations presentation</title>
     <meta charset="utf-8">
     <style>
       @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
@@ -17,27 +17,13 @@
     </style>
   </head>
   <body>
-    <textarea id="source">
-
-class: center, middle
-
-# Extending Markdown with Citations
-
-- Wenhan Zhu (Cosmos)
-
----
-
-# Markdown
-
----
-
-# Citation
-
-    </textarea>
+    <textarea id="source"> </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
     </script>
     <script>
-      var slideshow = remark.create();
+      var slideshow = remark.create({
+        sourceUrl: 'presentation.md'
+      });
     </script>
   </body>
 </html>

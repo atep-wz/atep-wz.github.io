@@ -149,7 +149,7 @@ Sharing:
 ]
 .right-column[
   #### Portability
-  How easy it is to setup the development environment when I have a barebone computer system.
+  How easy it is to set up the development environment when I have a barebones computer system.
 
   PDF | Word | Latex | HTML | markdown
   -|-|-|-|-
@@ -177,7 +177,7 @@ Sharing:
   HTML | Yes | Manual | Yes*
   Markdown | No | Manual | No
 
-  .footnote[Printing in HTML is done through browser, will cover in more details in later slides]
+  .footnote[.red[* ] Printing in HTML is done through browser, will cover in more details in later slides]
 
 ]
 
@@ -252,7 +252,7 @@ Sharing:
 ]
 
 .right-column[
-  #### "More" than a extension of the markup syntax
+  #### More than a extension of the markup syntax
   Require extra program for some functionality (MMD) or itself is a entire program (RMD).
 
   <img src="https://d33wubrfki0l68.cloudfront.net/b8ea889386094107f8a5cd511ff05b0ce8336a51/3a9c7/images/bandtwo2.png" width="600">
@@ -292,12 +292,12 @@ graph LR
 
   - Natively through MathML
 
-  <center><img src="http://latex2png.com/output//latex_d024ef106aaa191a09950a96ae5ffecd.png" width=120></center>
+  <center><img src="http://latex2png.com/output//latex_0e6b6358434f5bbaf45759468871db9f.png" width=120></center>
 
-  $$   \sum_{i = 1}^{\inf} \frac{1}{n^2} = \frac{\pi}{6} $$
+  $$   \sum_{i = 1}^{\infty} \frac{1}{n^2} = \frac{\pi}{6} $$
 
   ```latex
-  \sum_{i = 1}^{\inf} \frac{1}{n^2} = \frac{\pi}{6}
+  \sum_{i = 1}^{\infty} \frac{1}{n^2} = \frac{\pi}{6}
   ```
 
 
@@ -388,7 +388,7 @@ graph LR
   <div class="tex2jax_ignore"> $$\sum_{i = 1}^{\inf} \frac{1}{n^2} = \frac{\pi}{6}$$ </div>
 
   With `extra.html` added to `raw.html` to form `output.html` we added the configuration of the javascript library and it will take care of the conversion from latex to math.
-  $$ \sum_{i = 1}^{\inf} \frac{1}{n^2} = \frac{\pi}{6} $$
+  $$ \sum_{i = 1}^{\infty} \frac{1}{n^2} = \frac{\pi}{6} $$
 
 ]
 
@@ -441,7 +441,59 @@ graph LR
 
   - RMarkDown
     `[@smith03]`
+]
 
+---
+.left-column[
+  ## Citation
+  ### - Bibtex
+  ### - Markdown Syntax
+  ### - Example
+
+]
+.right-column[
+  ### Example Bibtex entry
+  ```text
+  @article{einstein,
+      author =       "Albert Einstein",
+      title =        "{Zur Elektrodynamik bewegter K{\"o}rper}. ({German})
+          [{On} the electrodynamics of moving bodies]",
+      journal =      "Annalen der Physik",
+      volume =       "322",
+      number =       "10",
+      pages =        "891--921",
+      year =         "1905",
+      DOI =          "http://dx.doi.org/10.1002/andp.19053221004"
+  }
+  ```
+
+<ul>
+<li>
+  <span class="">
+    <a class="bibtexVar" extra="BIBTEXKEY">
+        <span style="text-decoration: underline;" class="title">Zur Elektrodynamik bewegter Körper. (German)
+      [On the electrodynamics of moving bodies]</span>,
+    </a>
+  </span>
+
+  <div class="">
+    <span class="author">Albert Einstein</span>
+  </div>
+  <div>
+    <span class=""><em><span class="journal">Annalen der Physik</span></em>,</span>
+    <span class=""><span class="volume">322</span>,</span>
+    <span class="">(<span class="number">10</span>),</span>
+    <span class=""> pages <span class="pages">891-921</span>,</span>
+
+    <span class=""><span class="year">1905</span>.</span>
+
+    <a class="bibtexVar" role="button" data-toggle="collapse" href="#bibeinstein" aria-expanded="false" aria-controls="bibeinstein" extra="BIBTEXKEY">
+</a>
+  </div>
+  <div style="display:none"><span class="bibtextype">journal</span></div>
+  <div style="display:none"></div>
+</li>
+</ul>
 
 ]
 
@@ -451,6 +503,86 @@ graph LR
   ### - What is it?
   ### - Bibtex
   ### - Markdown Syntax
+  ### - Example
+]
+.right-column[
+### Markdow file
+```markdown
+## Title
+This is an example citation[@einstein].
+
+Another random paragraph.
+```
+
+### Output html
+```html
+<h2> Title </h1>
+
+<p> This is an example citation<span class="citation" id="cite-einstein"> [einstein] </span> </p>.
+
+<p> Another random paragraph </p>
+
+<h3> Reference </h3>
+<!-- Code for rendering the citation base on bibtex entry -->
+```
+]
+
+---
+.left-column[
+  ## Citation
+  ### - What is it?
+  ### - Bibtex
+  ### - Markdown Syntax
+  ### - Example
+]
+.right-column[
+<h2> Title </h1>
+
+<p> This is an example citation<span class="citation" id="cite-einstein"> [einstein] </span> .</p>
+
+<p> Another random paragraph </p>
+
+<h3> Reference </h3>
+
+### Reference
+<ul>
+<li>
+  <span class="">
+    <a class="bibtexVar" extra="BIBTEXKEY">
+        <span style="text-decoration: underline;" class="title">Zur Elektrodynamik bewegter Körper. (German)
+      [On the electrodynamics of moving bodies]</span>,
+    </a>
+  </span>
+
+  <div class="">
+    <span class="author">Albert Einstein</span>
+  </div>
+  <div>
+    <span class=""><em><span class="journal">Annalen der Physik</span></em>,</span>
+    <span class=""><span class="volume">322</span>,</span>
+    <span class="">(<span class="number">10</span>),</span>
+    <span class=""> pages <span class="pages">891-921</span>,</span>
+
+    <span class=""><span class="year">1905</span>.</span>
+
+    <a class="bibtexVar" role="button" data-toggle="collapse" href="#bibeinstein" aria-expanded="false"     aria-controls="bibeinstein" extra="BIBTEXKEY">
+    </a>
+  </div>
+  <div style="display:none"><span class="bibtextype">journal</span></div>
+  <div style="display:none"></div>
+</li>
+</ul>
+
+]
+
+
+---
+.left-column[
+  ## Citation
+  ### - What is it?
+  ### - Bibtex
+  ### - Markdown Syntax
+  ### - Example
   ### - Implementation
 ]
 .right-column[
@@ -461,6 +593,8 @@ graph LR
   - Javascript based
 
   - Extensible
+
+
 
   ### Options
 
@@ -477,6 +611,7 @@ graph LR
   ### - What is it?
   ### - Bibtex
   ### - Markdown Syntax
+  ### - Example
   ### - Implementation
 ]
 .right-column[
@@ -498,7 +633,7 @@ graph LR
 ---
 class: middle, center
 
-# Demo of current work
+# [Demo](markdown-citation/index.html) of current work
 
 ---
 class: middle, center

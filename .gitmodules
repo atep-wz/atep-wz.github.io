@@ -1,3 +1,4 @@
 [submodule "markdown-citation"]
 	path = markdown-citation
 	url = https://github.com/CosmosAtlas/markdown-citation
+	branch = master
